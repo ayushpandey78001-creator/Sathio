@@ -6,7 +6,6 @@ services:
   - type: web
     name: sathio-api
     runtime: python
-    plan: free
 
     rootDir: backend
 
@@ -36,7 +35,6 @@ services:
   - type: web
     name: sathio-web
     runtime: static
-    plan: free
 
     rootDir: frontend
 
