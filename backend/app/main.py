@@ -51,6 +51,9 @@ app.include_router(users.router)
 app.include_router(matches.router)
 app.include_router(connections.router)
 
+from app.routers import chat
+app.include_router(chat.router, tags=["chat"])
+
 
 @app.get("/")
 def health_check():
