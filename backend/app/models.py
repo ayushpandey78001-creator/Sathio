@@ -79,3 +79,15 @@ class User(Base):
         "Connection", foreign_keys=[Connection.receiver_id], back_populates="receiver",
         cascade="all, delete-orphan"
     )
+    
+from sqlalchemy import Column, Integer, String, ForeignKey, DateTime
+from sqlalchemy.sql import func
+
+class Message(Base):
+    __tablename__ = "messages"
+    
+    id = Column(Integer, primary_key=True, index=True)
+    sender_id = Column(Integer, ForeignKey("users.id"))
+    receiver_id = Column(Integer, ForeignKey("users.id"))
+    content = Column(String, nullable=False)
+    timestamp = Column(DateTime, server_default=func.now())
