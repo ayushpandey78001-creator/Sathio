@@ -1,3 +1,4 @@
+import ChatBox from '../components/ChatBox';
 import { useEffect, useState } from "react";
 import api, { getApiErrorMessage } from "../lib/api";
 import { useAuth } from "../context/AuthContext";
